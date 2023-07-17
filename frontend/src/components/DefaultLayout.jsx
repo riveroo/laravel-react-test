@@ -1,5 +1,6 @@
 import { Navigate, Outlet } from "react-router-dom";
 import { useStateContext } from "../context/ContextProvider";
+import Navbar from "./Navbar";
 
 export default function DefaultLayout() {
     const { user, token } = useStateContext();
@@ -10,8 +11,10 @@ export default function DefaultLayout() {
 
     return (
         <div>
-            hello
-            <Outlet />
+            <Navbar />
+            <div className="max-w-[85%]  mx-auto mt-4">
+                <Outlet />
+            </div>
         </div>
     );
 }
